@@ -1,5 +1,5 @@
 pipelines:
-  - name: select_nodepool_example
+  - name: releaseTest_nodepool
     configuration:
       nodePool:   test_np                       # Run in the dynamic node pool on AWS
     steps:
