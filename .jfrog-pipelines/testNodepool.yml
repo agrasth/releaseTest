@@ -6,6 +6,8 @@ pipelines:
       - name: nodePool_step1
         type: Bash
         execution:
+          onStart:
+            - set_run_name "1.0.1"
           onExecute:
             - echo "$step_name is running in $step_platform on $step_node_pool_name"
  
