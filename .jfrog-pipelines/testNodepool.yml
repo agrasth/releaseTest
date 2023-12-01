@@ -1,7 +1,7 @@
 pipelines:
   - name: releaseTest_nodepool
     configuration:
-      nodePool: releaseTesting_np                       # Run in the dynamic node pool on AWS
+      nodePool: releaseTest_nodepool                       # Run in the dynamic node pool on AWS
     steps:
       - name: nodePool_step1
         type: Bash
