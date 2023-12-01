@@ -17,7 +17,7 @@ pipelines:
         execution:
           onExecute:
             - echo "$step_name is running in $step_platform on $step_node_pool_name"
-            - cd $abc
+            - ./execute.sh
 
       - name: nodePool_step3
         type: Bash
