@@ -31,3 +31,36 @@ pipelines:
         execution:
           onExecute:
             - echo "$step_name is running in $step_platform on $step_node_pool_name"
+
+
+  - name: releaseTest_Defaultnodepool
+    configuration:
+      nodePool: default-dynamic-nodepool                       # Run default nodepool in cloud d2c instance
+    steps:
+      - name: nodePool_step1
+        type: Bash
+        execution:
+          onStart:
+            - set_run_name "1.0.1"
+            - msg="Run description updated from step $step_id"
+            - update_run_description "$msg"
+          onExecute:
+            - echo "$step_name is running in $step_platform on $step_node_pool_name"
+ 
+      - name: step1
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: nodePool_step1
+        execution:
+          onExecute:
+            - echo "$step_name is running in $step_platform on $step_node_pool_name"
+
+      - name: step2
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: nodePool_step1
+        execution:
+          onExecute:
+            - echo "$step_name is running in $step_platform on $step_node_pool_name"
