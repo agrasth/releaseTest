@@ -1,5 +1,14 @@
+resources:
+  - name: resource_agrasthGit
+    type: GitRepo
+    configuration:
+      gitProvider: agrasthGit #rename to your integration name
+      path: agrasth/releaseTest #rename to your repo name
 pipelines:
   - name: releaseTest_nodepool
+  configuration:
+      inputResources:
+        - name: resource_agrasthGit
     steps:
       - name: nodePool_step1
         type: Bash
