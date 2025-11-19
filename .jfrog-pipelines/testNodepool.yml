@@ -1,7 +1,5 @@
 pipelines:
   - name: releaseTest_nodepool
-    configuration:
-      nodePool: releaseTest_nodepool                       # Run in the dynamic node pool on AWS
     steps:
       - name: nodePool_step1
         type: Bash
@@ -33,9 +31,7 @@ pipelines:
             - echo "$step_name is running in $step_platform on $step_node_pool_name"
 
 
-  - name: releaseTest_Defaultnodepool
-    configuration:
-      nodePool: default-dynamic-nodepool                       # Run default nodepool in cloud d2c instance
+  - name: releaseTest_Defaultnodepool                    
     steps:
       - name: nodePool_step1
         type: Bash
