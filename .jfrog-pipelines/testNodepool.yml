@@ -6,7 +6,7 @@ resources:
       path: agrasth/releaseTest #rename to your repo name
 pipelines:
   - name: releaseTest_nodepool
-  configuration:
+    configuration:
       inputResources:
         - name: resource_agrasthGit
     steps:
